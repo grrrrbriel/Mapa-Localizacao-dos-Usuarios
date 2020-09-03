@@ -35,7 +35,8 @@ def data_reading():
 #Avoiding GeocoderTimedOut
 
 def do_geocode(address):
-    geopy = Nominatim(timeout=3)
+    #geopy = Nominatim(timeout=3)
+    geopy = Nominatim(user_agent="mapa-localizacao-dos-usuarios")
     try:
         return geopy.geocode(address,exactly_one=True)
     except GeocoderTimedOut:
